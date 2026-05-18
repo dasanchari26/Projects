@@ -1,0 +1,30 @@
+CREATE DATABASE IF NOT EXISTS f32ee;
+USE f32ee;
+
+CREATE TABLE users
+(
+  userID INT UNSIGNED NOT NULL PRIMARY KEY AUTO_INCREMENT,
+  Name VARCHAR(50) NOT NULL UNIQUE,
+  Email VARCHAR(50) NOT NULL UNIQUE,
+  Address VARCHAR(100) NOT NULL,
+  Password VARCHAR(255) NOT NULL
+);
+
+CREATE TABLE clothesville_products
+(
+  productid INT NOT NULL PRIMARY KEY,
+  name VARCHAR(100) NOT NULL,
+  price DECIMAL(10,2) NOT NULL,
+  category VARCHAR(50) NOT NULL,
+  item_size VARCHAR(10) NOT NULL,
+  color VARCHAR(30) NOT NULL,
+  quantity INT NOT NULL,
+  img VARCHAR(255) NOT NULL
+);
+
+CREATE TABLE clothesville_orders (
+    orderid INT AUTO_INCREMENT PRIMARY KEY,
+    username VARCHAR(50),
+    productid INT,
+    status VARCHAR(30)
+);
